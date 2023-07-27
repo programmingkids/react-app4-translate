@@ -10,6 +10,7 @@ Reactレベル3基礎修了
 Reactレベル4基礎修了  
 Reactレベル5基礎修了  
 Reactレベル6基礎修了  
+Reactレベル7基礎修了  
 Reactアプリ1修了  
 Reactアプリ2修了  
 Reactアプリ3修了  
@@ -39,6 +40,7 @@ Reactアプリ3修了
 * Reactレベル4
 * Reactレベル5
 * Reactレベル6
+* Reactレベル7
 * Reactアプリ作成1
 * Reactアプリ作成2
 * Reactアプリ作成3
