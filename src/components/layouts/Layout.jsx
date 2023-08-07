@@ -5,8 +5,6 @@ import { MyBottomNavigation } from './../blocks/MyBottomNavigation';
 
 export const Layout = () => (
   <AppTheme>
-    <MyAppBar />
     <Outlet />
-    <MyBottomNavigation />
   </AppTheme>
 );

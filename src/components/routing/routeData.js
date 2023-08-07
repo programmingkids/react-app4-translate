@@ -19,14 +19,6 @@ export const routeData = [
                 element: <About />,
             },
             {
-                path: 'history',
-                element: <History />,
-            },
-            {
-                path: 'star',
-                element: <Star />,
-            },
-            {
                 path: '*',
                 element: <NotFound />,
             },

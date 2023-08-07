@@ -11,54 +11,8 @@ import { getTranslate } from '../providers/TranslateAPI';
 import { countries } from './Contries';
 
 export const TranslateForm = ({prices}) => {
-  const dispatch = useContext(DispatchContext);
-  const [fromText, setFromText] = useState('りんご');
-  const [toText, setToText] = useState('');
-  const [lang, setLang] = useState({
-    fromLang: 'ja-JP',
-    toLang: 'en-US',
-  });
-  
-  const handleOnChangeWord = (e) => {
-    setFromText(() => e.target.value);
-  };
-  
-  const handleOnChangeLang = (e) => {
-    const newLang = {...lang};
-    setLang(p => {
-      newLang[e.target.name] = e.target.value;
-      return newLang;
-    });
-  };
-  
-  const handleOnClickTranslate = (e) => {
-    (async () => {
-      if(fromText === '') {
-        setToText('');
-        return;
-      }
-      const data = await getTranslate(fromText, lang.fromLang, lang.toLang);
-      let result = data.responseData.translatedText;
-      data.matches.forEach(data => {
-        if (data.id === 0) {
-          result = data.translation;
-        }
-      });
-      setToText(result);
-      
-      dispatch({
-        type : 'save',
-        payload : {
-          data : {
-            fromText,
-            toText : result,
-            fromLang : lang.fromLang,
-            toLang : lang.toLang,
-          },
-        }
-      });
-    })();
-  };
+
+
   
   return (
     <Container maxWidth="sm" sx={{my:5}}>
@@ -76,8 +30,9 @@ export const TranslateForm = ({prices}) => {
             id="from-text"
             label="翻訳前の言葉"
             sx={{backgroundColor: "#ffffff"}}
-            value={fromText}
-            onChange={handleOnChangeWord}
+            
+            
+            
           />
           <FormControl sx={{my: 2}} fullWidth size="small">
             <InputLabel id="from-text-input-label">
@@ -89,8 +44,9 @@ export const TranslateForm = ({prices}) => {
               id="fromLang"
               name="fromLang"
               sx={{backgroundColor:"#ffffff"}}
-              value={lang.fromLang}
-              onChange={handleOnChangeLang}
+
+
+
             >
             {Object.keys(countries).map((key) => {
               return <MenuItem key={key} value={key}>{countries[key]}</MenuItem>;
@@ -101,7 +57,10 @@ export const TranslateForm = ({prices}) => {
         <Button
           variant="contained"
           color="secondary"
-          onClick={handleOnClickTranslate}
+
+
+
+
         >
           翻訳
           <ArrowForwardIosIcon fontSize="small" />
@@ -113,8 +72,10 @@ export const TranslateForm = ({prices}) => {
             multiline
             rows={6}
             variant="outlined"
-            value={toText}
             sx={{backgroundColor: "#ffffff"}}
+
+
+
           />
           <FormControl sx={{my: 2}} fullWidth size="small">
             <InputLabel id="to-text-input-label">
@@ -126,8 +87,9 @@ export const TranslateForm = ({prices}) => {
               id="toLang"
               name="toLang"
               sx={{backgroundColor:"#ffffff"}}
-              value={lang.toLang}
-              onChange={handleOnChangeLang}
+
+
+
             >
             {Object.keys(countries).map((key) => {
               return <MenuItem key={key} value={key}>{countries[key]}</MenuItem>;

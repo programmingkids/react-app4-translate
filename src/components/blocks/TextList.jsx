@@ -24,25 +24,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 export const TextList = ({data}) => {
-  const dispatch = useContext(DispatchContext);
   
-  const onClickDelete = (e, id) => {
-    dispatch({
-      type : 'delete',
-      payload : {
-        id
-      }
-    });
-  };
   
-  const onClickIsStar = (e, id) => {
-    dispatch({
-      type : 'star',
-      payload : {
-        id
-      }
-    });
-  };
+  
   
   return (
     <Container sx={{mt: 2, mb:10}}>
@@ -64,16 +48,22 @@ export const TextList = ({data}) => {
               sx={{ cursor: 'pointer' }}
             >
               <StyledTableCell>
-                {d.fromText}（{d.fromLang}）
+
+
+
               </StyledTableCell>
               <StyledTableCell>
-                {d.toText}（{d.toLang}）
+
+
+
               </StyledTableCell>
               <StyledTableCell>
                 <IconButton 
                   aria-label="delete" 
                   color="error"
-                  onClick={(e) => onClickDelete(e,d.id)}
+
+
+
                 >
                   <DeleteIcon />
                 </IconButton>
@@ -81,7 +71,9 @@ export const TextList = ({data}) => {
               <StyledTableCell>
                 <IconButton
                   aria-label="star"
-                  onClick={(e) => onClickIsStar(e,d.id)}
+
+
+
                 >
                   <Star {...d} />
                 </IconButton>
