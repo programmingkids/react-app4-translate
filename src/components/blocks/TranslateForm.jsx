@@ -8,7 +8,7 @@ import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { DispatchContext } from '../providers/DispatchContext';
 import { getTranslate } from '../providers/TranslateAPI';
-import { countries } from './Contries';
+import { countries } from './Countries';
 
 export const TranslateForm = ({prices}) => {
 
