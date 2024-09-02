@@ -1,17 +1,17 @@
-import { useContext } from 'react';
-import { Box, Stack, Paper, Button } from '@mui/material';
-import { Container, Typography } from '@mui/material';
-import { IconButton } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { DispatchContext } from './../providers/DispatchContext';
-import { Star } from './Star';
+import { useContext } from "react";
+import { Box, Stack, Paper, Button } from "@mui/material";
+import { Container, Typography } from "@mui/material";
+import { IconButton } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { DispatchContext } from "./../providers/DispatchContext";
+import { Star } from "./Star";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -23,13 +23,9 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }));
 
-export const TextList = ({data}) => {
-  
-  
-  
-  
+export const TextList = ({ data }) => {
   return (
-    <Container sx={{mt: 2, mb:10}}>
+    <Container sx={{ mt: 2, mb: 10 }}>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 400 }} aria-label="table">
           <TableHead>
@@ -41,45 +37,22 @@ export const TextList = ({data}) => {
             </TableRow>
           </TableHead>
           <TableBody>
-          {data.map(d => (
-            <TableRow 
-              key={d.id} 
-              hover 
-              sx={{ cursor: 'pointer' }}
-            >
-              <StyledTableCell>
-
-
-
-              </StyledTableCell>
-              <StyledTableCell>
-
-
-
-              </StyledTableCell>
-              <StyledTableCell>
-                <IconButton 
-                  aria-label="delete" 
-                  color="error"
-
-
-
-                >
-                  <DeleteIcon />
-                </IconButton>
-              </StyledTableCell>
-              <StyledTableCell>
-                <IconButton
-                  aria-label="star"
-
-
-
-                >
-                  <Star {...d} />
-                </IconButton>
-              </StyledTableCell>
-            </TableRow>
-          ))}
+            {data.map((d) => (
+              <TableRow key={d.id} hover sx={{ cursor: "pointer" }}>
+                <StyledTableCell></StyledTableCell>
+                <StyledTableCell></StyledTableCell>
+                <StyledTableCell>
+                  <IconButton aria-label="delete" color="error">
+                    <DeleteIcon />
+                  </IconButton>
+                </StyledTableCell>
+                <StyledTableCell>
+                  <IconButton aria-label="star">
+                    <Star {...d} />
+                  </IconButton>
+                </StyledTableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
