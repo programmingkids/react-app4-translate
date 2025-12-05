@@ -10,7 +10,7 @@ import { DispatchContext } from '../providers/DispatchContext';
 import { getTranslate } from '../providers/TranslateAPI';
 import { countries } from './Countries';
 
-export const TranslateForm = ({ prices }) => {
+export const TranslateForm = () => {
   const dispatch = useContext(DispatchContext);
   const [fromText, setFromText] = useState('りんご');
   const [toText, setToText] = useState('');

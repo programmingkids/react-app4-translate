@@ -10,7 +10,7 @@ import { DispatchContext } from '../providers/DispatchContext';
 import { getTranslate } from '../providers/TranslateAPI';
 import { countries } from './Countries';
 
-export const TranslateForm = ({ prices }) => {
+export const TranslateForm = () => {
   return (
     <Container maxWidth="sm" sx={{ my: 5 }}>
       <Stack
